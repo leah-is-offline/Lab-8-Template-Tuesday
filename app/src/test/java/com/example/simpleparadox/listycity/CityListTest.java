@@ -14,7 +14,7 @@ class CityListTest {
     }
 
     private City mockCity() {
-        return new City("Edmonton", "Alberta");
+        return new City("Edmonton", "Alberta",1);
     }
 
     @Test
@@ -23,17 +23,17 @@ class CityListTest {
 
         assertEquals(1, cityList.countCities());
 
-        cityList.add(new City("Regina", "Saskatchewan"));
+        cityList.add(new City("Regina", "Saskatchewan",5));
 
         assertEquals(2, cityList.countCities());
-        assertTrue(cityList.hasCity(new City("Regina", "Saskatchewan")));
+        assertTrue(cityList.hasCity(new City("Regina", "Saskatchewan",5)));
     }
 
     @Test
     void testAddException() {
         CityList cityList = mockCityList();
 
-        City city = new City("Yellowknife", "Northwest Territories");
+        City city = new City("Yellowknife", "Northwest Territories",4);
         cityList.add(city);
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -54,7 +54,7 @@ class CityListTest {
 
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(0)));
 
-        City city = new City("Charlottetown", "Prince Edward Island");
+        City city = new City("Charlottetown", "Prince Edward Island",3);
         cityList.add(city);
 
         assertEquals(0, city.compareTo(cityList.getCities().get(0)));
@@ -65,7 +65,7 @@ class CityListTest {
     void testDeleteCity() {
         CityList cityList = mockCityList();
 
-        City city = new City("Victoria", "British Columbia");
+        City city = new City("Victoria", "British Columbia", 2);
         cityList.add(city);
 
         assertEquals(2, cityList.countCities());
@@ -94,10 +94,11 @@ class CityListTest {
         assertEquals(1, cityList.countCities());
     }
 
+    /**sorry for the misnaming and lack of creativity**/
     @Test
     void nonNullProvince(){
-        CityList cityList = mockCityList();
-        assertTrue(1, mockCity().getCityNumber());
+        City mockCity = mockCity();
+        assertEquals(1, mockCity.getCityNumber());
     }
 
 }

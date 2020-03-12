@@ -3,10 +3,12 @@ package com.example.simpleparadox.listycity;
 public class City implements Comparable<City>{
     private String city;
     private String province;
+    private int number;
 
-    City(String city, String province){
+    City(String city, String province, int number){
         this.city = city;
         this.province = province;
+        this.number = number;
     }
 
     String getCityName(){
@@ -17,9 +19,7 @@ public class City implements Comparable<City>{
         return this.province;
     }
 
-    void setCityName(String city){
-        this.city = city;
-    }
+    int getCityNumber(){ return this.number; }
 
     @Override
     public int compareTo(City o) {

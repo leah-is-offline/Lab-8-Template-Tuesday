@@ -29,12 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
         String []cities ={"Edmonton", "Vancouver", "Toronto", "Hamilton", "Denver", "Los Angeles"};
         String []provinces = {"AB", "BC", "ON", "ON", "CO", "CA"};
+        int []numbers = {1, 2, 3, 4, 5, 6};
 
 
         cityDataList = new ArrayList<>();
 
         for(int i=0;i<cities.length;i++){
-            cityDataList.add((new City(cities[i], provinces[i])));
+            cityDataList.add((new City(cities[i], provinces[i], numbers[i])));
         }
 
         cityAdapter = new CustomList(this, cityDataList);
