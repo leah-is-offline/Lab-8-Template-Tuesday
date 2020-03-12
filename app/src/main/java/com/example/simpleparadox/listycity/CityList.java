@@ -47,7 +47,6 @@ public class CityList {
                 return true;
             }
         }
-
         return false;
     }
 
