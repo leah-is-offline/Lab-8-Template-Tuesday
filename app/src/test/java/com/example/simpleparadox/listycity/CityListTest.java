@@ -94,10 +94,6 @@ class CityListTest {
         assertEquals(1, cityList.countCities());
     }
 
-    @Test
-    void nonNullProvince(){
-        CityList cityList = mockCityList();
-        assertTrue(1, mockCity().getCityNumber());
-    }
+
 
 }
